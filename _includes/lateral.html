@@ -1,0 +1,18 @@
+<div class="col-sm-3">
+                                <h1>{{ site.name }}</h1>
+                                <!-- <img id="about" src="/img/logo.jpg" height="75px" width="75px" /><br /> -->
+                                <a target="_blank" href="https://github.com/underscorenico"><i class="fa fa-github fa-2x"></i></a>
+                                &nbsp <a target="_blank" href="https://twitter.com/underscore_nico"><i class="fa fa-twitter fa-2x"></i></a>
+                                &nbsp <a target="_blank" href="http://stackoverflow.com/users/5089400/underscore-nico?tab=profile"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                                &nbsp <a target="_blank" href="https://fr.linkedin.com/in/nicolasvinuesa"><i class="fa fa-linkedin fa-2x"></i></a>
+                                &nbsp <a target="_blank" href="mailto:vinuesa.nico@gmail.com"><i class="fa fa-envelope fa-2x"></i></a>
+                                <br/>
+                                <br/>
+
+                                {% if site.about %}
+                                <div id="about">
+                                        {{ site.about }}
+                                </div>
+                                {% endif %}
+</div>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+
+		<div class="container">
+
+			{% include lateral.html %}
+			<div class="col-sm-8 col-offset-1">
+				
+				{{ content }}
+				
+				{% include footer.html %}				
+			</div>
+		
+		</div>
+		{% include scripts.html %}
+    </body>
+</html>
