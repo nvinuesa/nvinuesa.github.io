@@ -2,7 +2,7 @@
 layout: post
 title:  "Launch pipelines on an entire project in XNAT"
 date:   2015-09-02 10:38:06 
-categories: xnat, python, pipelines, project-level
+categories: blog
 ---
 
 [XNAT][xnat-site] (the eXtensible Neuroimaging Archive Toolkit) is a great tool for managing large sets of medical images (in particular neuroimaging). One of its useful features is the pipeline engine, which allows to easily write and launch pipelines, although it has a huge drawback: it is impossible to launch the same pipeline on all the subjects of a project. In this post I will explain one possible workaround using a very simple python script.
