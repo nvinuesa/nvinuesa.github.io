@@ -11,6 +11,18 @@ categories: blog
 If you are new to XNAT, you will discover that it manages imaging files in a custom fashion: PROJECT/SUBJECT/SESSION. Meaning that in your XNAT server you can have several projects (or imaging cohorts), with of course several subjects in it, and finally each subject with several imaging sessions (longitudinal studies) on it.
 <br>On the other hand, the web application allows you to run pipelines from the UI; but as stated before, pipelines are only session-wide. This means that if you want to launch the same pipeline for every session of every subject in a project, you would have to manually do it by clicking the launch button on the UI.
 
+Hopefully, XNAT's REST API is quite complete (some documentation can be found [here][xnat-rest]). This means that we can for instance retrieve the list of projects in the site, the list of subjects in one project, the list of pipelines, etc. 
+<br> The first step in the script is therefore to get the list of projects from XNAT using the REST API:
+{% highlight python %}
+# Obtain a list of projects present at the site:
+request = urllib2.Request(site + "/REST/projects?format=json")
+base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '')
+request.add_header("Authorization", "Basic %s" % base64string)   
+response = urllib2.urlopen(request)
+html = response.read()
+data = json.loads(html)
+projectsIt = data['ResultSet']['Result']
+{% endhighlight %}
 
 +	<em>Easy to use and setup</em> - Jekyll has a huge range of documentation to get you started writing posts and the Simply Grey theme makes your blog look beautiful.
 +	<em>Easy configuration</em> - I developed this theme in order to be as customisable as possible. If you want to add more links to the navigation bar, all you have to do is edit the _config.yaml file and the `urls` part of it.
@@ -66,3 +78,4 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com
 [xnat-site]: http://www.xnat.org/
+[xnat-rest]: https://wiki.xnat.org/display/XNAT16/Using+the+XNAT+REST+API
