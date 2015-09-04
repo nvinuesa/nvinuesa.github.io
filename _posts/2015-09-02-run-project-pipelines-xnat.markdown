@@ -23,57 +23,51 @@ html = response.read()
 data = json.loads(html)
 projectsIt = data['ResultSet']['Result']
 {% endhighlight %}
-
-+	<em>Easy to use and setup</em> - Jekyll has a huge range of documentation to get you started writing posts and the Simply Grey theme makes your blog look beautiful.
-+	<em>Easy configuration</em> - I developed this theme in order to be as customisable as possible. If you want to add more links to the navigation bar, all you have to do is edit the _config.yaml file and the `urls` part of it.
-+	<em>You can change it</em> - After being released with the MIT license (like Jekyll itself) you are free to change and basically do anything you want to this theme provided you keep the copyright notice in the files and distribute the license with it. 
-
-## Jekyll
-Jekyll is a static site generator developed in ruby that generates websites from markdown and many other formats. The benefit of this is that you can have a highly customisable blog where you can generate posts by writing easy markdown code whilst still retaining the small memory imprint that Jekyll has. 
-
-### Code Snippets
-Code Snippets are one of the main reasons why I love Jekyll and I think you will too. All code snippets become highlighted with great colours when you write the code in markdown. Here is an example of highlighted Ruby code in a weather application that I have made.
-{% highlight bash %}
-#!/usr/bin/env ruby
-
-require 'json'
-require 'net/http'
-require 'libnotify'
-
-def parsejson
-    file = "http://api.openweathermap.org/data/2.5/find?q=London&mode=json"
-    response = Net::HTTP.get_response(URI.parse(file))
-    weatherjson = response.body
-    actual = JSON.parse(weatherjson)
-
-    # check for errors
-    if actual.has_key? 'Error'
-        raise "error with the url"
-    end
-
-    results = []
-
-    actual["list"].each do |listitem|
-        weather = listitem["weather"]
-        weather.each do |weath|
-            results.push(weath["description"])
-        end
-        main = listitem["main"]
-        temp = main["temp"] - 273.15
-        results.push ("%.2f" % temp)
-    end
-
-    return results
-end
-
-def notify(summary)
-    Libnotify.show(:body => "Current temperature is: #{summary[1]} degrees celsius.\nCurrent description of conditions: #{summary[0]}", :summary => "Weather Update", :timeout => 10)
-end
-
-notify(parsejson())
+After the retrieved data is converted back to json, is easy to pick up one desired element on the resulting dictionary. Following this procedure, we can therefore get the list of pipelines that are available for the chose project (because in XNAT you have to make a pipeline "available" in each project you want to use it on) in the same fashion:
+{% highlight python %}
+# Obtain a list of pipelines present at the chosen project:
+request = urllib2.Request(site + "/data/projects/" + project + "/pipelines?format=json")
+base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '')
+request.add_header("Authorization", "Basic %s" % base64string)   
+response = urllib2.urlopen(request)
+html = response.read()
+data = json.loads(html)
+pipeIt = data['ResultSet']['Result']
 {% endhighlight %}
-
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+Again, in the same way, we choose a pipeline and the last step before launching it is to get the input arguments needed for that particular pipeline (since the user will have to provide this arguments and he/she may not know which are these input arguments):
+{% highlight python %}
+# Obtain the list of input parameters on the chosen pipeline:
+request = urllib2.Request(site + "/data/projects/" + project + "/pipelines/" + pipeline)
+base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '')
+request.add_header("Authorization", "Basic %s" % base64string)   
+response = urllib2.urlopen(request)
+html = response.read()
+data = json.loads(html)
+argIt = data['inputParameters']
+{% endhighlight %}
+## Launch in T-minus 10,9,...
+After collecting all the previous data from the user, it is time to launch the pipeline on the entire project. Of course, this is also done via XNAT's REST API. 
+<br> There is still one last detail; since the goal of this script is to launch a pipeline on ALL the subjects of a particular project, the user should not even have to know how many or which are the subjects in the chosen project. Therefore we will get the list of subjects in a project from xnat withouth letting the user select any subgroup of it.
+<br> Here's the function:
+{% highlight python %}
+def launch(site, user, password, project, pipeline, args):
+    request = urllib2.Request(site + "/data/archive/projects/" + project + "/experiments?format=json")
+    base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '')
+    request.add_header("Authorization", "Basic %s" % base64string)   
+    response = urllib2.urlopen(request)
+    html = response.read()
+    data = json.loads(html)
+    experiments = data['ResultSet']['Result']
+    for exp in experiments:
+        print('Launching ' + pipeline + ' on experiment ' +exp['ID'])
+        request = urllib2.Request(site + "/REST/projects/" + project + "/pipelines/" + pipeline + "/experiments/" + exp['ID'] + "?" + args)
+        request.add_header("Authorization", "Basic %s" % base64string) 
+        response = urllib2.urlopen(request, '')
+        html = response.read()
+{% endhighlight %}
+## Conclusions
+With this very simple python script we are able to overcome a "limitation" in XNAT for some of us and at the same time we can experiment with the REST API.
+<br> The entire script can be found here: 
 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]:    http://jekyllrb.com
