@@ -5,7 +5,7 @@ date:   2015-09-05 15:18:01
 categories: blog
 ---
 
-Following the same line of work as the last blog post, I'll explain a possible way of uploading a set of Dicom images separated in folders indicating subject/session organization into [XNAT][xnat-site].
+Following the same line of work as the last blog post, I'll explain a possible way of uploading a set of Dicom images separated in folders indicating subject/session organization into [XNAT][xnat-site]. This solution is based on a script by Hauke Bartsch (hbartsch@ucsd.edu).
 
 ## XNAT is RESTful
 If you are new to XNAT, you will discover that it manages imaging files in a custom fashion: PROJECT/SUBJECT/SESSION. Meaning that in your XNAT server you can have several projects (or imaging cohorts), with of course several subjects in it, and finally each subject with several imaging sessions (longitudinal studies) on it.
