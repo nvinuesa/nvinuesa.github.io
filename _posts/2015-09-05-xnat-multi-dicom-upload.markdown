@@ -5,6 +5,11 @@ date:   2015-09-05 15:18:01
 categories: blog
 ---
 
+Following the same line of work as the last blog post, I'll explain a possible way of uploading a set of Dicom images separated in folders indicating subject/session organization into [XNAT][xnat-site].
+
+## XNAT is RESTful
+If you are new to XNAT, you will discover that it manages imaging files in a custom fashion: PROJECT/SUBJECT/SESSION. Meaning that in your XNAT server you can have several projects (or imaging cohorts), with of course several subjects in it, and finally each subject with several imaging sessions (longitudinal studies) on it.
+<br>On the other hand, the web application allows you to run pipelines from the UI; but as stated before, pipelines are only session-wide. This means that if you want to launch the same pipeline for every session of every subject in a project, you would have to manually do it by clicking the launch button on the UI.
 
 
 {% highlight bash %}
