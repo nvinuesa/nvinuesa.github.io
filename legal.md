@@ -7,7 +7,7 @@ tags: legal
 
 About this site:
 
-Licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
+Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
 Powered by [Jekyll](http://jekyllrb.com/ "Jekyll")
 
