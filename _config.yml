@@ -2,7 +2,7 @@
 title:       Nicolas Vinuesa
 email:
 author:      Nicolas Vinuesa
-description: "Mi blog"
+description: "My blog"
 baseurl:     ""
 url:         "http://underscorenico.github.io"
 date_format: "%b %-d, %Y"
