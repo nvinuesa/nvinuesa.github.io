@@ -1,10 +1,10 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Nicolas Vinuesa
+email:
+author:      Nicolas Vinuesa
+description: "Mi blog"
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://underscorenico.github.io"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -37,14 +37,14 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: underscorenico
 bitbucket_username:
-stackoverflow_id:
-twitter_username:
+stackoverflow_id: underscore_nico
+twitter_username: underscore_nico
 skype_username:
 steam_nickname:
 google_plus_id:
-linkedin_username:
+linkedin_username: nicolasvinuesa
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -52,12 +52,12 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
 share_facebook: false
-share_twitter: false
+share_twitter: true
 share_googleplus: false
-share_linkedin: false
+share_linkedin: true
 share_digg: false
 share_tumblr: false
 share_reddit: false
@@ -65,9 +65,9 @@ share_stumbleupon: false
 share_hackernews: false
 
 text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
+#  pagination:
+#    newer: 'Newer'
+#    older: 'Older'
   share_buttons:
     text:         'Share this post!'
     facebook:     'Share on Facebook'
