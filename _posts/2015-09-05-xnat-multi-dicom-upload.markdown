@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Upload multi subjects/session XNAT
+title: Upload multi subjects / session XNAT
 date: 2015-09-05T15:18:01.000Z
 categories: blog
 ---
