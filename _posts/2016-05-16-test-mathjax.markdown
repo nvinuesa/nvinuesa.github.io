@@ -8,7 +8,9 @@ categories: blog
 In this post I will be playing with some of the amazing features proposed by [MathJax][mathjax-site].
 
 # Integrals
-Example rendering a quite complex integral:
-\\[ \oint \! \nabla f \, \<code>mathrf{d} t = 0</code> \\]
+
+Example rendering a quite simple integral:
+
+\\[ \int_a^b \! f(x) \, \mathrm{d}x \\]
 
 [mathjax-site]: https://www.mathjax.org/
