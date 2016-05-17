@@ -11,5 +11,4 @@ In this post I will be playing with some of the amazing features proposed by [Ma
 
 Example rendering a quite simple integral:
 
-
 [mathjax-site]: https://www.mathjax.org/
