@@ -11,4 +11,6 @@ In this post I will be playing with some of the amazing features proposed by [Ma
 
 Example rendering a quite simple integral:
 
+\\[ \int_a^b \! f(x) \, \mathrm{d}x \\]
+
 [mathjax-site]: https://www.mathjax.org/
