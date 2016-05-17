@@ -96,7 +96,7 @@ text:
 
 # Build settings
 markdown:     kramdown
-#mathjax: false
+enable_mathjax: true
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
