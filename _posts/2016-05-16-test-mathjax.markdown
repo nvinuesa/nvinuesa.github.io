@@ -19,11 +19,11 @@ Text|Rendered expression
 
 Multiple integrals:
 
-Text|Rendered expression
-\$\$\iint_V \mu(u,v) \,du\,dv\$\$|$$\iint_V \mu(u,v) \,du\,dv$$
+| Text | Rendered expression |
+| \$\$\iint_V \mu(u,v) \,du\,dv\$\$ | $$\iint_V \mu(u,v) \,du\,dv$$ |
 
-Text|Rendered expression
-\$\$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw\$\$|$$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw$$
+| Text | Rendered expression |
+| \$\$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw\$\$ | $$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw$$ |
 
 
 [mathjax-site]: https://www.mathjax.org/
