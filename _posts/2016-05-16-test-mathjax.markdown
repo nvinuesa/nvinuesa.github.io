@@ -11,6 +11,13 @@ In this post I will be playing with some of the amazing features proposed by [Ma
 
 Example rendering a quite simple integral:
 
-\\[ \int_a^b \! f(x) \, \mathrm{d}x \\]
+\\[ \int_{a}^{b} x^2 dx \\]
+
+Multiple integrals:
+
+\\[ \iint_V \mu(u,v) \,du\,dv \\]
+
+$$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw$$
+
 
 [mathjax-site]: https://www.mathjax.org/
