@@ -22,11 +22,5 @@ $$\iint_V \mu(u,v) \,du\,dv$$
 
 $$\iiiint_V \mu(t,u,v,w) \,dt\,du\,dv\,dw$$
 
-Contour integrals:
-
-$$\oiint_V f(s,t) \,ds\,dt$$
-
-$$\ointctrclockwise_V f(u) \,du$$
-
 
 [mathjax-site]: https://www.mathjax.org/
