@@ -7,7 +7,7 @@ categories: blog
 
 Following the same line of work as the last blog post, I'll explain a possible way of uploading a set of Dicom images separated in folders indicating subject/session organization into [XNAT][xnat-site]. This solution is based on a script by Hauke Bartsch (hbartsch@ucsd.edu).
 
-# Bash script:
+## Bash script:
 
 {% highlight bash %}
 
