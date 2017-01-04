@@ -1,8 +1,8 @@
 # Site settings
-title:       Nicolas Vinuesa
+title:       Mosaicos
 email:
 author:      Nicolas Vinuesa
-description: "My blog"
+description: "A place for memories"
 baseurl:     ""
 url:         "http://underscorenico.github.io"
 date_format: "%b %-d, %Y"
