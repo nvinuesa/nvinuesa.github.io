@@ -95,7 +95,10 @@ text:
   og_locale: 'en_US'
 
 # Build settings
+highlighter:  rouge
 markdown:     kramdown
+kramdown:
+  input: GFM
 enable_mathjax: true
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
