@@ -62,8 +62,26 @@ data = json.loads(html) argIt = data['inputParameters']
 
 After collecting all the previous data from the user, it is time to launch the pipeline on the entire project. Of course, this is also done via XNAT's REST API.<br>
 There is still one last detail; since the goal of this script is to launch a pipeline on ALL the subjects of a particular project, the user should not even have to know how many or which are the subjects in the chosen project. Therefore we will get the list of subjects in a project from xnat withouth letting the user select any subgroup of it.<br>
-Here's the function: {% highlight python %} def launch(site, user, password, project, pipeline, args): request = urllib2.Request(site + "/data/archive/projects/" + project + "/experiments?format=json") base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '') request.add_header("Authorization", "Basic %s" % base64string)<br>
-response = urllib2.urlopen(request) html = response.read() data = json.loads(html) experiments = data['ResultSet']['Result'] for exp in experiments: print('Launching ' + pipeline + ' on experiment ' +exp['ID']) request = urllib2.Request(site + "/REST/projects/" + project + "/pipelines/" + pipeline + "/experiments/" + exp['ID'] + "?" + args) request.add_header("Authorization", "Basic %s" % base64string) response = urllib2.urlopen(request, '') html = response.read() {% endhighlight %}
+Here's the function: 
+
+{% highlight python %} 
+
+def launch(site, user, password, project, pipeline, args): 
+  request = urllib2.Request(site + "/data/archive/projects/" + project + "/experiments?format=json") 
+  base64string = base64.encodestring('%s:%s' % (user, password)).replace('\n', '') 
+  request.add_header("Authorization", "Basic %s" % base64string)
+  response = urllib2.urlopen(request) 
+  html = response.read() 
+  data = json.loads(html) 
+  experiments = data['ResultSet']['Result'] 
+  for exp in experiments: 
+    print('Launching ' + pipeline + ' on experiment ' +exp['ID']) 
+    request = urllib2.Request(site + "/REST/projects/" + project + "/pipelines/" + pipeline + "/experiments/" + exp['ID'] + "?" + args) 
+    request.add_header("Authorization", "Basic %s" % base64string) 
+    response = urllib2.urlopen(request, '') 
+    html = response.read() 
+
+{% endhighlight %}
 
 ## Conclusions
 
