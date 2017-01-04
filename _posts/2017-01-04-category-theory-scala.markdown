@@ -12,7 +12,7 @@ This article aims to serve as a gentle introduction to abstract algebra and cate
 I will start by reviewing on of the features that make Scala's one of the most advanced and powerful type systems. In my humble opinion, this feature should be the starting point for programmers that want to learn category theory, since it by its means that monads and functors can be implemented.<br>
 Higher-kinded types is an abstraction over types. As Adriaan Moors clearly explains in [this post][SO01], higher-kinded types are easier to understand if seen as a higher-order polymorphism. This can be shown in the following example:
 
-```scala
+```java
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
 class Container[T] 
 // Generic type, where M[_] is a one-argument type constructor:
