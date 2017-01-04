@@ -14,9 +14,9 @@ Higher-kinded types is an abstraction over types. As Adriaan Moors clearly expla
 
 {% highlight scala %}
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
-trait Container[T] 
+class Container[T] 
 // Generic type, where M[_] is a one-argument type constructor:
-trait Foo[M[_]] 
+class Foo[M[_]] 
 
 {% endhighlight %}
 
