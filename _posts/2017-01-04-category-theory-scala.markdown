@@ -13,7 +13,8 @@ I will start by reviewing on of the features that make Scala's one of the most a
 Higher-kinded types is an abstraction over types. As Adriaan Moors clearly explains in [this post][SO01], higher-kinded types are easier to understand if seen as a higher-order polymorphism. This can be shown in the following example:
 
 
-```scala
+{% highlight java %}
+
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
 class Container[T] 
 // Generic type, where M[_] is a one-argument type constructor:
@@ -23,6 +24,6 @@ trait Monad[F[_]] extends FlatMap[F] with Applicative[F] {
   override def map[A, B](fa: F[A])(f: A => B): F[B] =
     flatMap(fa)(a => pure(f(a)))  
     
-```
+{% endhighlight %}
 
 [SO01]: http://stackoverflow.com/a/6427289/5089400
