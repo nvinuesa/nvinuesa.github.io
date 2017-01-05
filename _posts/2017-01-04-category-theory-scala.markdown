@@ -20,6 +20,16 @@ class Container[T]
 // Generic type, where M[_] is a one-argument type constructor:
 class Foo[M[_]]
 
+class Bar[F[_,_]]
+
 {% endhighlight %}
 
+The second and there classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
+<br>
+This (seemingly) simple feature allows us to develop powerful abstractions (not only over types, as classic java polymorphism, but over type constructors), and gives birth to advanced and complex abstract algebra libraries that we will cover in the next sessions.
+<br>
+More information about Higher-kinded types can be found in [this twitter blog][TW01] and in this wonderful [TypeLevel post][TY01].
+
 [SO01]: http://stackoverflow.com/a/6427289/5089400
+[TW01]: https://twitter.github.io/scala_school/advanced-types.html#higher
+[TY01]: http://typelevel.org/blog/2016/08/21/hkts-moving-forward.html
