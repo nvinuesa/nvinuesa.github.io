@@ -13,7 +13,7 @@ I will start by reviewing on of the features that make Scala's one of the most a
 Higher-kinded types is an abstraction over types. As Adriaan Moors clearly explains in [this post][SO01], higher-kinded types are easier to understand if seen as a higher-order polymorphism. This can be shown in the following example:
 
 
-```scala
+{% highlight %}
 
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
 class Container[T] 
@@ -22,7 +22,7 @@ class Foo[M[_]]
 
 class Bar[F[_,_]]
 
-```
+{% endhighlight %} 
 
 The second and there classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
 <br>
