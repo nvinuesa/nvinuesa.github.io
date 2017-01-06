@@ -97,6 +97,9 @@ text:
 # Build settings
 markdown:     kramdown
 highlighter:  rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
 enable_mathjax: true
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
