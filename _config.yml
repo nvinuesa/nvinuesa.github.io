@@ -95,7 +95,7 @@ text:
   og_locale: 'en_US'
 
 # Build settings
-markdown:     kramdown
+markdown:     redcarpet
 highlighter:  rouge
 kramdown:
   input: GFM
