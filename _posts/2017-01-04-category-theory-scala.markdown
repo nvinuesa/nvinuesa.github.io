@@ -19,6 +19,7 @@ class Container[T]
 // Generic type, where M[_] is a one-argument type constructor:
 class Foo[M[_]]
 class Bar[F[_,_]]
+// comment bla bla
 {% endhighlight %} 
 
 The second and there classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
