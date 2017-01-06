@@ -18,8 +18,8 @@ Higher-kinded types is an abstraction over types. As Adriaan Moors clearly expla
 class Container[T] 
 // Generic type, where M[_] is a one-argument type constructor:
 class Foo[M[_]]
+// Generic type, where F[_,_] is a two argument type constructor:
 class Bar[F[_,_]]
-// comment bla bla
 {% endhighlight %} 
 
 The second and there classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
