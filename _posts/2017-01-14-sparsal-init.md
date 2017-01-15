@@ -10,11 +10,11 @@ This led to creating the Sparse Approximation Library - sparsal, for people look
 implemented in a human-readable, functional style. 
 <br>
 
-#Overview
+# Overview
 I came across the Matching Pursuit algorithm during an internship at INRIA - Bordeaux. The fruits of the internship can be 
 found in [this][paper] non-published article.
 <br>
 The goal of sparsal is to provide students and general users an "easy" introduction to sparse approximation methods.
 
 
-[paper]:
+[paper]: 
