@@ -104,7 +104,7 @@ enable_mathjax: true
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     50
 sass:
   compressed: true
 gems:
