@@ -38,12 +38,15 @@ Before going any further, lets review the formal definition of category.
 <br>
 A category C consists of:
 <br>
+
 * a set of objects $$ ob(C) $$
 <br>
 * for each pair $$ x,y \in ob(C) $$ a set of morphisms (or arrows, or maps) $$ hom(C) $$ or $$ hom_c(x,y) $$
 <br>
 * for each triple $$ x,y,z \in ob(C)$$ a binary operation $$ hom(x,y) \times hom(y,z) \rightarrow hom(x,z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
 <br>
+
+
 subject to the following conditions:
 <br>
 * composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
