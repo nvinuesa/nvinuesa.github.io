@@ -22,7 +22,7 @@ class Foo[M[_]]
 class Bar[F[_,_]]
 {% endhighlight %} 
 
-The second and there classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
+The second and third classes illustrate its purpose. The class Foo takes as parameter a type constructor taking one parameter, while Bar takes as parameter a type constructor taking two parameters.
 <br>
 This (seemingly) simple feature allows us to develop powerful abstractions (not only over types, as classic java polymorphism, but over type constructors), and gives birth to advanced and complex abstract algebra libraries that we will cover in the next sessions.
 <br>
@@ -31,3 +31,21 @@ More information about Higher-kinded types can be found in [this twitter blog][T
 [SO01]: http://stackoverflow.com/a/6427289/5089400
 [TW01]: https://twitter.github.io/scala_school/advanced-types.html#higher
 [TY01]: http://typelevel.org/blog/2016/08/21/hkts-moving-forward.html
+
+## Category
+
+Before going any further, lets review the formal definition of category.
+<br>
+A category C consists of:
+<br>
+- a set of objects $$ ob(C) $$
+<br>
+- for each pair $$ x,y \in ob(C) $$ a set of morphisms (or arrows, or maps) $$ hom(C) $$ or $$ hom_c(x,y) $$
+<br>
+- for each triple $$ x,y,z \in ob(C)$$ a binary operation $$ hom(x,y) \times hom(y,z) \rightarrow hom(x,z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
+<br>
+subject to the following conditions:
+<br>
+- composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
+<br>
+- for every element $$ x \in ob(C) $$ there exists a morphism $$ iD_x \in hom(C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
