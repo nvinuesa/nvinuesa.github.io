@@ -38,14 +38,14 @@ Before going any further, lets review the formal definition of category.
 <br>
 A category C consists of:
 <br>
-- a set of objects $$ ob(C) $$
+* a set of objects $$ ob(C) $$
 <br>
-- for each pair $$ x,y \in ob(C) $$ a set of morphisms (or arrows, or maps) $$ hom(C) $$ or $$ hom_c(x,y) $$
+* for each pair $$ x,y \in ob(C) $$ a set of morphisms (or arrows, or maps) $$ hom(C) $$ or $$ hom_c(x,y) $$
 <br>
-- for each triple $$ x,y,z \in ob(C)$$ a binary operation $$ hom(x,y) \times hom(y,z) \rightarrow hom(x,z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
+* for each triple $$ x,y,z \in ob(C)$$ a binary operation $$ hom(x,y) \times hom(y,z) \rightarrow hom(x,z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
 <br>
 subject to the following conditions:
 <br>
-- composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
+* composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
 <br>
-- for every element $$ x \in ob(C) $$ there exists a morphism $$ iD_x \in hom(C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
+* for every element $$ x \in ob(C) $$ there exists a morphism $$ iD_x \in hom(C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
