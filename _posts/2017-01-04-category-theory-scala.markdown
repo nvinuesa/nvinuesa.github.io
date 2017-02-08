@@ -39,19 +39,18 @@ Before going any further, lets review the formal definition of category.
 A category  $$ \mathcal C $$ consists of:
 <br>
 
-- a set of objects $$ ob(\mathcal C) $$
-- for each pair $$ X,Y \in ob(\mathcal C) $$ a set of morphisms (or arrows, or maps) $$ hom(\mathcal C) $$ or $$ hom_c(X,Y) $$
-- for each triple $$ X,Y,Z \in ob(\mathcal C)$$ a binary operation $$ hom(X,Y) \times hom(Y,Z) \rightarrow hom(X,Z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
+* a set of objects $$ ob(\mathcal C) $$
+* for each pair $$ X,Y \in ob(\mathcal C) $$ a set of morphisms (or arrows, or maps) $$ hom(\mathcal C) $$ or $$ hom_c(X,Y) $$
+* for each triple $$ X,Y,Z \in ob(\mathcal C)$$ a binary operation $$ hom(X,Y) \times hom(Y,Z) \rightarrow hom(X,Z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
 
 subject to the following conditions:
-
 
 * composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
 * for every element $$ X \in ob(\mathcal C) $$ there exists a morphism $$ iD_x \in hom(\mathcal C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
 
 In simple words, in software engineering we could see categories as a way to represent objects and the relations that link them (the morphisms).
 
-## Functor
+## Functor
 
 But what about the mappings (or relations, or morphisms) that link one category to another?
 <br>
