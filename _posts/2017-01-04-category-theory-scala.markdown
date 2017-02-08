@@ -63,9 +63,9 @@ Firstly, lets review the formal definition of a functor.
 Given categories $$ \mathcal C $$ and $$ \mathcal D $$, a functor $$ \mathcal F $$ from $$ \mathcal C $$ to $$ \mathcal D $$:
 
 * maps each element $$ X \in ob(\mathcal C) $$ to an element $$ \mathcal F(X) $$ in $$ \mathcal D $$
-* maps each morphism $$ f: X \rigtharrow Y $$ in $$ \mathcal C $$ to a morphism $$ \mathcal F(f): \mathcal F(X) \rigtharrow \mathcal F(Y) $$ in $$ \mathcal D $$
+* maps each morphism $$ f: X \rightarrow Y $$ in $$ \mathcal C $$ to a morphism $$ \mathcal F(f): \mathcal F(X) \rightarrow \mathcal F(Y) $$ in $$ \mathcal D $$
 
 subject to:
 
 * $$ \mathcal F(id_X) = id_{F(X)} $$ for every element $$ X \in ob(\mathcal C) $$
-* $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rigtharrow Y $$ and $$ g: Y \rigtharrow Z $$ in $$ \mathcal C $$
+* $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rightarrow Y $$ and $$ g: Y \rightarrow Z $$ in $$ \mathcal C $$
