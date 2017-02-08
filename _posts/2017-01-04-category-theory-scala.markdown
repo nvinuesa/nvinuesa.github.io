@@ -60,6 +60,7 @@ Well, actually Scala allows this, and calling it "generics of a higher kind" wou
 <br>
 Firstly, lets review the formal definition of a functor.
 <br>
+<br>
 Given categories $$ \mathcal C $$ and $$ \mathcal D $$, a functor $$ \mathcal F $$ from $$ \mathcal C $$ to $$ \mathcal D $$:
 
 * maps each element $$ X \in ob(\mathcal C) $$ to an element $$ \mathcal F(X) $$ in $$ \mathcal D $$
@@ -69,3 +70,5 @@ subject to:
 
 * $$ \mathcal F(id_X) = id_{F(X)} $$ for every element $$ X \in ob(\mathcal C) $$
 * $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rightarrow Y $$ and $$ g: Y \rightarrow Z $$ in $$ \mathcal C $$
+
+For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. 
