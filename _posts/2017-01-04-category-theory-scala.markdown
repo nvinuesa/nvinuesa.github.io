@@ -36,15 +36,37 @@ More information about Higher-kinded types can be found in [this twitter blog][T
 
 Before going any further, lets review the formal definition of category.
 <br>
-A category C consists of:
+A category  $$ \mathcal C $$ consists of:
 <br>
 
-- a set of objects $$ ob(C) $$
-- for each pair $$ x,y \in ob(C) $$ a set of morphisms (or arrows, or maps) $$ hom(C) $$ or $$ hom_c(x,y) $$
-- for each triple $$ x,y,z \in ob(C)$$ a binary operation $$ hom(x,y) \times hom(y,z) \rightarrow hom(x,z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
+- a set of objects $$ ob(\mathcal C) $$
+- for each pair $$ X,Y \in ob(\mathcal C) $$ a set of morphisms (or arrows, or maps) $$ hom(\mathcal C) $$ or $$ hom_c(X,Y) $$
+- for each triple $$ X,Y,Z \in ob(\mathcal C)$$ a binary operation $$ hom(X,Y) \times hom(Y,Z) \rightarrow hom(X,Z) $$ noted as $$ f,g \rightarrow f \circ g $$, also referred as composition of morphisms
 
 subject to the following conditions:
 
 
 * composition of morphisms is associative: $$ (f \circ g) \circ h = f \circ (g \circ h) $$
-* for every element $$ x \in ob(C) $$ there exists a morphism $$ iD_x \in hom(C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
+* for every element $$ X \in ob(\mathcal C) $$ there exists a morphism $$ iD_x \in hom(\mathcal C) $$ such that $$ iD_x \circ f = f $$ and $$ g \circ iD_x = g $$
+
+In simple words, in software engineering we could see categories as a way to represent objects and the relations that link them (the morphisms).
+
+## Functor
+
+But what about the mappings (or relations, or morphisms) that link one category to another?
+<br>
+This crazy idea would kinda like if we wanted to have a second degree of generics ;)
+<br>
+Well, actually Scala allows this, and calling it "generics of a higher kind" would not be a huge mistake. As presented in the introduction, we can have higher kinded types that could mimic the relationship between categories.
+<br>
+Firstly, lets review the formal definition of a functor.
+<br>
+Given categories $$ \mathcal C $$ and $$ \mathcal D $$, a functor $$ \mathcal F $$ from $$ \mathcal C $$ to $$ \mathcal D $$:
+
+* maps each element $$ X \in ob(\mathcal C) $$ to an element $$ \mathcal F(X) $$ in $$ \mathcal D $$
+* maps each morphism $$ f: X \rigtharrow Y $$ in $$ \mathcal C $$ to a morphism $$ \mathcal F(f): \mathcal F(X) \rigtharrow \mathcal F(Y) $$ in $$ \mathcal D $$
+
+subject to:
+
+* $$ \mathcal F(id_X) = id_{F(X)} $$ for every element $$ X \in ob(\mathcal C) $$
+* $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rigtharrow Y $$ and $$ g: Y \rigtharrow Z $$ in $$ \mathcal C $$
