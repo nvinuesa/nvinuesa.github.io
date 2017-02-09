@@ -71,11 +71,16 @@ subject to:
 * $$ \mathcal F(id_X) = id_{F(X)} $$ for every element $$ X \in ob(\mathcal C) $$
 * $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rightarrow Y $$ and $$ g: Y \rightarrow Z $$ in $$ \mathcal C $$
 
-For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. Basically, a functor would just define a ```map``` method:
-
-
+For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. Basically, a functor would just define a ```map``` method.
+<br>
+This is the functor definition in [scalaz][scalaz]:
 {% highlight scala %}
-trait Functor[F[_]] {
+trait Functor[F[_]] extends InvariantFunctor[F] { self =>
+
+  /** Lift `f` into `F` and apply to `F[A]`. */
   def map[A, B](fa: F[A])(f: A => B): F[B]
+  ...
 }
 {% endhighlight %} 
+
+[scalaz]: https://github.com/scalaz/scalaz
