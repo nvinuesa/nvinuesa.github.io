@@ -16,8 +16,8 @@ Higher-kinded types is an abstraction over types. As Adriaan Moors clearly expla
 {% highlight scala %}
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
 class Container[T] 
-// Generic type, where M[_] is a one-argument type constructor:
-class Foo[M[_]]
+// Generic type, where F[_] is a one-argument type constructor:
+class Foo[F[_]]
 // Generic type, where F[_,_] is a two argument type constructor:
 class Bar[F[_,_]]
 {% endhighlight %} 
@@ -71,4 +71,11 @@ subject to:
 * $$ \mathcal F(id_X) = id_{F(X)} $$ for every element $$ X \in ob(\mathcal C) $$
 * $$ \mathcal F(f \circ g) = \mathcal F(f)  \circ \mathcal F(g) $$ for all morphisms $$ f: X \rightarrow Y $$ and $$ g: Y \rightarrow Z $$ in $$ \mathcal C $$
 
-For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. 
+For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. Basically, a functor would just define a ```map``` method:
+
+
+{% highlight scala %}
+trait Functor[F[_]] {
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+{% endhighlight %} 
