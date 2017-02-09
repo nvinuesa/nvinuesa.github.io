@@ -74,6 +74,7 @@ subject to:
 For us, software engineers, this means that a functor is just a morphism between categories, also called structures preserving map. Basically, a functor would just define a ```map``` method.
 <br>
 This is the functor definition in [scalaz][scalaz]:
+
 {% highlight scala %}
 trait Functor[F[_]] extends InvariantFunctor[F] { self =>
 
@@ -83,4 +84,21 @@ trait Functor[F[_]] extends InvariantFunctor[F] { self =>
 }
 {% endhighlight %} 
 
+and in [cats][cats]:
+{% highlight scala %}
+/**
+  * Functor.
+  *
+  * The name is short for "covariant functor".
+  *
+  * Must obey the laws defined in cats.laws.FunctorLaws.
+  */
+@typeclass trait Functor[F[_]] extends functor.Invariant[F] { self =>
+  def map[A, B](fa: F[A])(f: A => B): F[B]
+}
+{% endhighlight %} 
+
 [scalaz]: https://github.com/scalaz/scalaz
+[cats]: https://github.com/typelevel/cats
+
+
