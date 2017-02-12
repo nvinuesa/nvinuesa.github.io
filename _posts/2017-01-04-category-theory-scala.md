@@ -13,7 +13,7 @@ I will start by reviewing on of the features that make Scala's one of the most a
 Higher-kinded types is an abstraction over types. As Adriaan Moors clearly explains in [this post][SO01], higher-kinded types are easier to understand if seen as a higher-order polymorphism. This can be shown in the following example:
 
 
-{% highlight scala %}
+{% highlight scala %} 
 // Generic type, T would be the concrete type replaced by the compiler at runtime:
 class Container[T] 
 // Generic type, where F[_] is a one-argument type constructor:
@@ -101,4 +101,28 @@ and in [cats][cats]:
 [scalaz]: https://github.com/scalaz/scalaz
 [cats]: https://github.com/typelevel/cats
 
+## Monad
 
+Similar to the functor, the monad is an abstraction for an operation. But instead of the map, it is an abstraction of the flatMap operation.
+<br>
+Havin this abstraction is of a huge importance. Since *monadic* structures provide us with the ability to wrap context information, and eventually return a subset of the parent type.
+<br>
+Scala example:
+
+{% highlight scala %}
+trait Monad[M[_]] {
+  def flatMap[A, B](fa: M[A])(f: A => M[B]): M[B]
+  def unit[A](a: => A): M[A]
+}
+{% endhighlight %} 
+
+As shown above, the ```flatMap``` operation returns a subset of the parent type M[_]: M[B].
+<br>
+The importance of this category relies also in that many of the data structures we are used to in functional programming have *monadic* properties; like ```Option```, ```Future``` and ```Try```.
+
+## Conclusions
+
+We have reviewed some of the most basic but also most important concepts in abstract algebra used in category theory. 
+<br>
+These mathematical frameworks provide us (engineers) with useful tools in our continuously pursuit of abstraction, factorization and readability in code.
+<br>
