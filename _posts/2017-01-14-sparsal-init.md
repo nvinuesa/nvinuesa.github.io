@@ -15,6 +15,3 @@ I came across the Matching Pursuit algorithm during an internship at INRIA - Bor
 found in [this][paper] non-published article.
 <br>
 The goal of sparsal is to provide students and general users an "easy" introduction to sparse approximation methods.
-
-
-[paper]: 
