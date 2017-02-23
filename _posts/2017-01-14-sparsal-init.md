@@ -10,8 +10,9 @@ This led to creating the Sparse Approximation Library - sparsal, for people look
 implemented in a human-readable, functional style. 
 <br>
 
-# Overview
-I came across the Matching Pursuit algorithm during an internship at INRIA - Bordeaux. The fruits of the internship can be 
-found in [this][paper] non-published article.
+# Overview 
+I came across the Matching Pursuit algorithm during an internship at INRIA - Bordeaux. Matching Pursuit is a greedy algorithm that decomposes a signal into "atoms" from an overcomplete dictionary, also called atomic decomposition. It is a valuable tool for dimensionality reduction and feature extraction. One of its extension (an orthogonal version), the Orthogonal Matching Pursuit, is mainly used for generating sparse approximation of signals.
 <br>
-The goal of sparsal is to provide students and general users an "easy" introduction to sparse approximation methods.
+The goal of sparsal is to provide students and general users an "easy" introduction to sparse approximation methods, writen in a functional style and easy to debug, modify and play with. Every implemented algorithm is written in a "naive"-way, without any attention paid to performance. Nonetheless, optimized implementations of some algorithms (like [MPTK][mptk]) will be available eventually.
+
+[mptk]: http://mptk.irisa.fr/
