@@ -26,6 +26,9 @@ Let's take for instance the discrete dyadic gabor dictionary described in sectio
 
 {% highlight scala %}
 
+  private def basis(u: Int, ω: Int, s: Int): Int => Double =
+    n => exp(-Pi * pow((n - u).toDouble / s.toDouble, 2)) * sin(2.0 * Pi * (ω.toDouble / N.toDouble) * (n - u).toDouble)
+
   /**
     * Dyadic sampling of the basis function to generate the dictionary
     */
