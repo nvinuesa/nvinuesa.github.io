@@ -7,8 +7,9 @@ categories: blog
 
 Two weeks ago I started coding an implementation of the Matching Pursuit algorithm, by Stéphane Mallat and Zhifeng Zhang.
 This led to creating the Sparse Approximation Library - sparsal, for people looking for some of the algorithms, 
-implemented in a human-readable, functional style. 
+implemented in a human-readable, functional style.
 <br>
+The project lives here: https://github.com/underscorenico/sparsal
 
 ## Overview 
 I came across the Matching Pursuit algorithm during an internship at INRIA - Bordeaux. Matching Pursuit is a greedy algorithm that decomposes a signal into "atoms" from an overcomplete dictionary, also called atomic decomposition. It is a valuable tool for dimensionality reduction and feature extraction. One of its extension (an orthogonal version), the Orthogonal Matching Pursuit, is mainly used for generating sparse approximation of signals.
@@ -18,7 +19,7 @@ The goal of sparsal is to provide students and general users an "easy" introduct
 [mptk]: http://mptk.irisa.fr/
 
 ## Why scala?
-Scala is the most complete of the modern programming languages. It is purely object-oriented, functional (functions are first class citizens), with a complete standard library made of mutable and immutable data structures and a syntax suitable for representing mathematical structures and functions. Also, features as pattern matching and higher kinded types allow for  new complex types.
+Scala is the most complete of the modern programming languages. It is purely object-oriented, functional (functions are first class citizens), with a complete standard library made of mutable and immutable data structures and a syntax suitable for representing mathematical structures and functions. Also, features as pattern matching and higher kinded types allow for new complex types. It comes therefore with no surprise that the chosen language of implementation for sparsal is scala.
 <br>
 Let's take for instance the discrete dyadic gabor dictionary described in section VI of [this seminal paper][mp], it can be generated in a readable way (without assessing performance issues):
 
