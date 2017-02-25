@@ -10,6 +10,7 @@ This led to creating the Sparse Approximation Library - sparsal, for people look
 implemented in a human-readable, functional style.
 <br>
 The project lives here: [https://github.com/underscorenico/sparsal][sparsal]
+<br>
 [sparsal]: https://github.com/underscorenico/sparsal
 
 ## Overview 
