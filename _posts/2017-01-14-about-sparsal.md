@@ -25,7 +25,8 @@ Let's take for instance the discrete dyadic gabor dictionary described in sectio
 
 [mp]: https://www.di.ens.fr/~mallat/papiers/MallatPursuit93.pdf
 
-```scala
+
+{% highlight scala %}
 
   private def basis(u: Int, ω: Int, s: Int): Int => Double =
     n => exp(-Pi * pow((n - u).toDouble / s.toDouble, 2)) * sin(2.0 * Pi * (ω.toDouble / N.toDouble) * (n - u).toDouble)
@@ -55,6 +56,6 @@ Let's take for instance the discrete dyadic gabor dictionary described in sectio
     matrix
   }
   
-```
+{% endhighlight %} 
 
 We can see that for comprehensions scala's feature is used here to generate the dictionary, where its generators (j, p and k) are implemented in a mathematical-like syntax very similar to as described in the paper.
