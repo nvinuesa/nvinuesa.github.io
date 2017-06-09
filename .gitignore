@@ -1,5 +1,38 @@
 _site
+
+# Temporary files
 *~
-.DS_Store
+*.bak
+*.old
+*.tmp
+nohup.out
+tmp/
+
+# vim
+.*.sw[a-z]
+
+# IntelliJ
+.idea/
+.idea_modules/
 *.iml
-.idea
+*.ipr
+*.iws
+
+# Eclipse
+.cache
+.classpath
+.project
+.scala_dependencies
+.settings/
+
+# Mac OS X
+._*
+.DS_Store
+
+# Windows
+Desktop.ini
+Thumbs.db
+
+### Sass ###
+.sass-cache/
+*.css.map
