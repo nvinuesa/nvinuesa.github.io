@@ -13,8 +13,6 @@ Tzourio-Mazoyer, Nathalie, et al. ["Between-hand difference in ipsilateral deact
 
 Jouvet, Denis, and Nicolas Vinuesa. ["Classification margin for improved class-based speech recognition performance."][a3] Acoustics, Speech and Signal Processing (ICASSP), 2012 IEEE International Conference on. IEEE, 2012.
 
-Jouvet, Denis, Arseniy Gorin, and Nicolas Vinuesa. ["Exploitation d'une marge de tolérance de classification pour améliorer l'apprentissage de modèles acoustiques de classes en reconnaissance de la parole."][a4] JEP-TALN-RECITAL 2012. 2012.
-
 [a1]: https://hal.inria.fr/hal-01627106/file/Daoudi-Vinuesa.pdf
 [a2]: http://dx.doi.org/10.3389/fnhum.2015.00005
 [a3]: http://dx.doi.org/10.1109/ICASSP.2012.6288866
