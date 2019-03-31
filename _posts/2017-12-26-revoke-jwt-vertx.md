@@ -107,7 +107,6 @@ This handler can be applied to a set of routes (via regex) respecting the routes
 
 As we can see, the second parameter allows us to provide the routes that will not check for a token present in the headers.
 
-## Conclusions
 [cookies-url]: https://en.wikipedia.org/wiki/HTTP_cookie
 [jwt-url]: https://jwt.io/
 [introvertx-url]: http://vertx.io/blog/posts/introduction-to-vertx.html
