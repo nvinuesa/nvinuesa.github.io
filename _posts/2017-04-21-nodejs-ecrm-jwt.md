@@ -524,5 +524,3 @@ exports.delete = function (id, next) {
 
 {% endhighlight %} 
 
-## JWT Authentication
-
