@@ -29,9 +29,9 @@ of the paper "Total Order Broadcast and Multicast Algorithms: Taxonomy and Surve
 # Implementation
 
 The algorithm is implemented as a command line application, as well as a golang library that can be added as a dependency, 
-the full project can be found in https://github.com/underscorenico/tobcast.
+the full project can be found in [https://github.com/underscorenico/tobcast].
 
-To begin with, I followed a widelly used go project layout: https://github.com/golang-standards/project-layout. 
+To begin with, I followed a widelly used go project layout: [https://github.com/golang-standards/project-layout]. 
 
 The `main()` function is present in `cmd/tobcast/main.go`, and it is the entry point for the binary when building it. 
 It is also where the configuration is loaded, and the different components of the library are initialized.
@@ -46,7 +46,7 @@ is provided in the root folder of the project.
 
 ### Build
 
-I chose to build the project using Makefile, and to follow Vincent Bernat's example Makefile (https://vincent.bernat.ch/en/blog/2019-makefile-build-golang). 
+I chose to build the project using Makefile, and to follow Vincent Bernat's example Makefile [https://vincent.bernat.ch/en/blog/2019-makefile-build-golang]. 
 
 To build the project you can simply run:
 
@@ -59,8 +59,8 @@ make all
 In order for our main process to shutdown gracefully, we need to be able to listen for events sent from the Os (signals like 
 SIGINT or SIGTERM) and react properly to them.
 
-There are several articles describing how to use `Context`for cancellation (https://eli.thegreenplace.net/2020/graceful-shutdown-of-a-tcp-server-in-go/, https://www.sohamkamani.com/blog/golang/2018-06-17-golang-using-context-cancellation/), but 
-this article https://medium.com/@matryer/make-ctrl-c-cancel-the-context-context-bd006a8ad6ff shows an elegant way of trapping 
+There are several articles describing how to use `Context`for cancellation ([https://eli.thegreenplace.net/2020/graceful-shutdown-of-a-tcp-server-in-go/], [https://www.sohamkamani.com/blog/golang/2018-06-17-golang-using-context-cancellation/]), but 
+this article [https://medium.com/@matryer/make-ctrl-c-cancel-the-context-context-bd006a8ad6ff] shows an elegant way of trapping 
 OS signals and propagating the cancellation using a context.
 
 I will not be implementing the shutdown using the context package, instead I just listen for the signals and react 
@@ -68,7 +68,7 @@ with a function that will properly stop the different services (as we'll see lat
 
 Simply add this to the main function:
 
-```Go
+```golang
 signals := make(chan os.Signal, 1)
 signal.Notify(signals, syscall.SIGINT, syscall.SIGTERM)
 
