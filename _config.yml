@@ -112,5 +112,9 @@ sass:
 gems:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-mastodon_webfinger
+plugins:
+  - jekyll/mastodon_webfinger
+
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
