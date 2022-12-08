@@ -37,10 +37,13 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username: underscorenico
+github_username: nvinuesa
 bitbucket_username:
 stackoverflow_id: 5089400
 twitter_username: underscore_nico
+mastodon:
+  username: nvinuesa
+  instance: hachyderm.io
 skype_username:
 steam_nickname:
 google_plus_id:
